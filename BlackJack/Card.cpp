@@ -5,15 +5,32 @@
 
 void itoa(int num, char arr[]);
 
-Card* card(int rank, char suit) {
+Card* card(int rank, char suit, Card* next) {
 
 	Card* newCard = (Card *) malloc(sizeof(Card));
 
 	newCard->rank = rank;
 	newCard->suit = suit;
+	newCard->next = next;
 
 	return newCard;
 
+}
+
+void card_add(Card* head, Card* toAdd) {
+
+	Card* temp = head;
+
+	if (head == NULL) {
+		head = toAdd;
+	} else {
+
+		while (temp->next != NULL) { //Iterate to the end of linked list
+			temp = temp->next;
+		}
+
+		temp->next = toAdd;
+	}
 }
 
 char* card_to_string(Card* card) { //TODO: remember to free me
