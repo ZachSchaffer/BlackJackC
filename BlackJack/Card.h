@@ -11,9 +11,9 @@ struct Card {
 
 Card* card(int rank, char suit);
 
-char* to_string(Card* card);
+char* card_to_string(Card* card);
 
-void free_card(Card card);
+void card_free(Card* card);
 
 
 
