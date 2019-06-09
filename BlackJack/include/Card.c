@@ -1,6 +1,7 @@
 #include "Card.h"
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 
 void itoa(int num, char arr[]);
@@ -31,6 +32,15 @@ void card_add(Card* head, Card* toAdd) {
 	}
 }
 
+Card* card_deal() {
+    srand(time(0));
+
+    int validRanks[] = {2,3,4,5,6,7,8,9,10,11,12,13,14};
+    char validSuits[] = {'c','s','h','d'};
+
+    return card(validRanks[rand()%13], validSuits[rand()%4], NULL);
+    
+}
 
 
 char* card_to_string(Card* card) { //TODO: remember to free me
@@ -99,24 +109,29 @@ void itoa(int num, char arr[]) {
 		arr[0] = '9';
 		arr[1] = '\0';
 	case 10:
-		arr[0] = '10';
-		arr[1] = '\0';
+		arr[0] = '1';
+        arr[1] = '0';
+		arr[2] = '\0';
 		break;
 	case 11:
-		arr[0] = '11';
-		arr[1] = '\0';
+		arr[0] = '1';
+        arr[1] = '1';
+		arr[2] = '\0';
 		break;
 	case 12:
-		arr[0] = '12';
-		arr[1] = '\0';
+		arr[0] = '1';
+		arr[1] = '2';
+        arr[2] = '\0';
 		break;
 	case 13:
-		arr[0] = '13';
-		arr[1] = '\0';
+		arr[0] = '1';
+		arr[1] = '3';
+        arr[2] = '\0';
 		break;
 	case 14:
-		arr[0] = '14';
-		arr[1] = '\0';
+		arr[0] = '1';
+		arr[1] = '4';
+        arr[2] = '\0';
 		break;
 	default:
 		break;
@@ -125,8 +140,8 @@ void itoa(int num, char arr[]) {
 }
 
 void card_free(Card* card) { //Remember to zero out pointer after free
-	card->rank = NULL;
-	card->suit = NULL;
+	// card->rank = NULL;
+	// card->suit = NULL;
 	free(card);
 }
 
