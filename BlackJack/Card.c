@@ -19,19 +19,19 @@ Card* card(int rank, char suit, Card* next) {
 
 void card_add(Card* head, Card* toAdd) {
 
-	Card* temp = head;
+	Card* current = head;
 
 	if (head == NULL) {
 		head = toAdd;
 	} else {
-
-		while (temp->next != NULL) { //Iterate to the end of linked list
-			temp = temp->next;
+		while (current->next != NULL) { //Iterate to the end of linked list
+			current = current->next;
 		}
-
-		temp->next = toAdd;
+		current->next = toAdd;
 	}
 }
+
+
 
 char* card_to_string(Card* card) { //TODO: remember to free me
 	
