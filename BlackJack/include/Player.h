@@ -10,4 +10,13 @@ struct Player {
     int score;
 };
 
+Player* player(Card* hand, int score);
+
+void player_add_card(Player* player, Card* card);
+
+void player_empty_hand(Player* player);
+
+void player_free(Player* player);
+
+
 #endif
