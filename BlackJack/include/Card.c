@@ -1,6 +1,7 @@
 #include "Card.h"
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 #include <time.h>
 
 
@@ -18,12 +19,12 @@ Card* card(int rank, char suit, Card* next) {
 
 }
 
-void card_add(Card* head, Card* toAdd) {
+void card_add(Card** head, Card* toAdd) {
 
-	Card* current = head;
+	Card* current = *head;
 
-	if (head == NULL) {
-		head = toAdd;
+	if (current == NULL) {
+		*head = toAdd;
 	} else {
 		while (current->next != NULL) { //Iterate to the end of linked list
 			current = current->next;
@@ -33,7 +34,6 @@ void card_add(Card* head, Card* toAdd) {
 }
 
 Card* card_deal() {
-    srand(time(0));
 
     int validRanks[] = {2,3,4,5,6,7,8,9,10,11,12,13,14};
     char validSuits[] = {'c','s','h','d'};
@@ -67,8 +67,9 @@ char* card_to_string(Card* card) { //TODO: remember to free me
 		strcat(result, rankAsString);
 	}
 
-	return strcat(result, &card->suit); //FIXME
-
+	strcat(result, &(card->suit)); //FIXME
+    result[3] = '\0';
+    return result;
 }
 
 void itoa(int num, char arr[]) {
@@ -139,10 +140,31 @@ void itoa(int num, char arr[]) {
 	
 }
 
-void card_free(Card* card) { //Remember to zero out pointer after free
-	// card->rank = NULL;
-	// card->suit = NULL;
-	free(card);
+char* card_print(Card* head) {
+    if (head->next == NULL) {
+        return card_to_string(head);
+    } else {
+        return strcat(strcat(card_to_string(head), ", "), card_print(head->next));
+    }
+}
+
+int card_size(Card* card) {
+    if (card != NULL) {
+        return 1 + card_size(card->next);
+    } else {
+        return 0;
+    }
+}
+
+void card_free(Card* card) {
+    if(card == NULL) {
+        return;
+    } else{
+        card->rank = NULL;
+        card->suit = NULL;
+        card_free(card->next);
+        free(card);
+    }
 }
 
 

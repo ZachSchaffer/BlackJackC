@@ -18,5 +18,6 @@ void player_empty_hand(Player* player);
 
 void player_free(Player* player);
 
+int player_hand_score(Player* player);
 
 #endif
