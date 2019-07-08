@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/BlackJack.dir/core/Blackjack.c.o CMakeFiles/BlackJack.dir/include/Card.c.o CMakeFiles/BlackJack.dir/include/Player.c.o  -o BlackJack 

@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/crow/Code/BlackJackC/BlackJack/core/Blackjack.c
+stdio.h
+-
+stdlib.h
+-
+time.h
+-
+../include/Card.h
+/home/crow/Code/BlackJackC/BlackJack/include/Card.h
+../include/Player.h
+/home/crow/Code/BlackJackC/BlackJack/include/Player.h
+
+/home/crow/Code/BlackJackC/BlackJack/include/Card.h
+
+/home/crow/Code/BlackJackC/BlackJack/include/Player.h
+Card.h
+/home/crow/Code/BlackJackC/BlackJack/include/Card.h
+
