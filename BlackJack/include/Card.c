@@ -67,7 +67,12 @@ char* card_to_string(Card* card) { //TODO: remember to free me
 		strcat(result, rankAsString);
 	}
 
-	strcat(result, &(card->suit)); //FIXME
+	if(result[1] == '\0') { //Check last available space in result and place suit there
+        result[1] = card->suit;
+	} else {
+	    result[2] = card->suit;
+	}
+
     result[3] = '\0';
     return result;
 }
@@ -102,6 +107,7 @@ void itoa(int num, char arr[]) {
 	case 7:
 		arr[0] = '7';
 		arr[1] = '\0';
+		break;
 	case 8:
 		arr[0] = '8';
 		arr[1] = '\0';
@@ -109,6 +115,7 @@ void itoa(int num, char arr[]) {
 	case 9:
 		arr[0] = '9';
 		arr[1] = '\0';
+		break;
 	case 10:
 		arr[0] = '1';
         arr[1] = '0';

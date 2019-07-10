@@ -32,6 +32,9 @@ int player_hand_score(Player *player) {
         if (player->hand->rank == 14 && player->hand->next->rank >= 10) {
             return 21;
         }
+        if(player->hand->rank >= 10 && player->hand->next == 14) {
+            return 21;
+        }
     }
     while (current_card != NULL) {
         if (current_card->rank == 14) { //Ace
@@ -40,7 +43,7 @@ int player_hand_score(Player *player) {
             } else {
                 sum += 11;
             }
-        } else if (current_card->rank > 10) { //Face card
+        } else if (current_card->rank >= 10) { //Face card
             sum += 10;
         } else { //Regular card
             sum += current_card->rank;
