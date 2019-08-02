@@ -37,37 +37,14 @@ int main() {
 
         player_empty_hand(human);
         player_empty_hand(dealer);
+
         //Deal cards
         for (int i = 0; i < 2; i++) {
             player_add_card(human, card_deal());
             player_add_card(dealer, card_deal());
         }
 
-        printf("Dealer cards: %s, Total: %d\n\n", card_print(dealer->hand),player_hand_score(dealer));
-
-        if (player_hand_score(human) > 21) {
-            printf("You Bust!\n");
-            loss_state(human);
-            continue;
-        }
-
-        if (player_hand_score(human) == 21) {
-            printf("Blackjack!\n");
-            win_state(human);
-            continue;
-        }
-
-        if (player_hand_score(dealer) == 21) {
-            printf("Dealer has BlackJack!\n");
-            loss_state(human);
-            continue;
-        }
-
-        if (player_hand_score(dealer) > 21) {
-            printf("Dealer Busts!\n");
-            win_state(human);
-            continue;
-        }
+        printf("Dealer cards: %s, Total: %d\n\n", card_print(dealer->hand), player_hand_score(dealer));
 
         while (human_hitting) {
 
@@ -107,7 +84,8 @@ int main() {
             player_add_card(dealer, card_deal());
         }
 
-        printf("\n==Dealer draws cards and winds up with: \n%s, a total of %d\n", card_print(dealer->hand), player_hand_score(dealer));
+        printf("\n==Dealer draws cards and winds up with: \n%s, a total of %d\n", card_print(dealer->hand),
+               player_hand_score(dealer));
 
         if (player_hand_score(dealer) == 21) {
             printf("Dealer has BlackJack!\n");
@@ -134,7 +112,6 @@ int main() {
     printf("======================\n");
     printf("Final Score: %d\n", human->score);
     printf("======================\n");
-
 
 }
 

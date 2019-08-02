@@ -5,7 +5,7 @@
 #include <time.h>
 
 
-void itoa(int num, char arr[]);
+void my_itoa(int num, char *arr);
 
 Card* card(int rank, char suit, Card* next) {
 
@@ -45,7 +45,7 @@ Card* card_deal() {
 
 char* card_to_string(Card* card) { //TODO: remember to free me
 	
-	char* result = (char*) calloc(1,4); //calloc zeroes out, ensuring we have a null terminator, card is max 4 bytes
+	char* result = (char*) calloc(1,4); //calloc zeroes out, ensuring we have a null terminatr, card is max 4 bytes
 	char rankAsString[3] = {'\0','\0','\0'};
 
 
@@ -63,7 +63,7 @@ char* card_to_string(Card* card) { //TODO: remember to free me
 		strcat(result, "A");
 	}
 	else {
-		itoa(card->rank, rankAsString);
+        my_itoa(card->rank, rankAsString);
 		strcat(result, rankAsString);
 	}
 
@@ -77,7 +77,7 @@ char* card_to_string(Card* card) { //TODO: remember to free me
     return result;
 }
 
-void itoa(int num, char arr[]) {
+void my_itoa(int num, char *arr) {
 
 	switch (num) {
 	case 1:

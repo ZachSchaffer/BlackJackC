@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/crow/Code/BlackJackC/BlackJack/core/Blackjack.c" "/home/crow/Code/BlackJackC/BlackJack/cmake-build-debug/CMakeFiles/BlackJack.dir/core/Blackjack.c.o"
-  "/home/crow/Code/BlackJackC/BlackJack/include/Card.c" "/home/crow/Code/BlackJackC/BlackJack/cmake-build-debug/CMakeFiles/BlackJack.dir/include/Card.c.o"
-  "/home/crow/Code/BlackJackC/BlackJack/include/Player.c" "/home/crow/Code/BlackJackC/BlackJack/cmake-build-debug/CMakeFiles/BlackJack.dir/include/Player.c.o"
+  "C:/Users/Crow/Code/Tutoring/BlackJackC/BlackJack/core/Blackjack.c" "C:/Users/Crow/Code/Tutoring/BlackJackC/BlackJack/cmake-build-debug/CMakeFiles/BlackJack.dir/core/Blackjack.c.obj"
+  "C:/Users/Crow/Code/Tutoring/BlackJackC/BlackJack/include/Card.c" "C:/Users/Crow/Code/Tutoring/BlackJackC/BlackJack/cmake-build-debug/CMakeFiles/BlackJack.dir/include/Card.c.obj"
+  "C:/Users/Crow/Code/Tutoring/BlackJackC/BlackJack/include/Player.c" "C:/Users/Crow/Code/Tutoring/BlackJackC/BlackJack/cmake-build-debug/CMakeFiles/BlackJack.dir/include/Player.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

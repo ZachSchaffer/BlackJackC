@@ -6,21 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/crow/Code/BlackJackC/BlackJack/core/Blackjack.c
+C:/Users/Crow/Code/Tutoring/BlackJackC/BlackJack/include/Card.h
+
+C:/Users/Crow/Code/Tutoring/BlackJackC/BlackJack/include/Player.c
 stdio.h
 -
 stdlib.h
 -
-time.h
--
-../include/Card.h
-/home/crow/Code/BlackJackC/BlackJack/include/Card.h
-../include/Player.h
-/home/crow/Code/BlackJackC/BlackJack/include/Player.h
+Player.h
+C:/Users/Crow/Code/Tutoring/BlackJackC/BlackJack/include/Player.h
 
-/home/crow/Code/BlackJackC/BlackJack/include/Card.h
-
-/home/crow/Code/BlackJackC/BlackJack/include/Player.h
+C:/Users/Crow/Code/Tutoring/BlackJackC/BlackJack/include/Player.h
 Card.h
-/home/crow/Code/BlackJackC/BlackJack/include/Card.h
+C:/Users/Crow/Code/Tutoring/BlackJackC/BlackJack/include/Card.h
 
